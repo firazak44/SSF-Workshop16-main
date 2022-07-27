@@ -1,4 +1,4 @@
-POST http://localhost:8080/board-game HTTP/1.1
+POST http://localhost:8085/board-game HTTP/1.1
 content-type: application/json
 
 {
@@ -28,11 +28,11 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:8080/board-game/254965a2 HTTP/1.1
+GET http://localhost:8085/board-game/254965a2 HTTP/1.1
 content-type: application/json
 
 ###
-PUT http://localhost:8080/board-game/254965a2 HTTP/1.1
+PUT http://localhost:8085/board-game/254965a2 HTTP/1.1
 content-type: application/json
 
 {
@@ -65,5 +65,5 @@ content-type: application/json
 
 ###
 
-GET http://localhost:8080/board-game/d4d4e2b1 HTTP/1.1
+GET http://localhost:8085/board-game/d4d4e2b1 HTTP/1.1
 content-type: application/json
