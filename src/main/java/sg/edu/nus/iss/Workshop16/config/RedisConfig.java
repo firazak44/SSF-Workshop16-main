@@ -28,7 +28,8 @@ public class RedisConfig {
     private Optional<Integer> redisPort;
 
     @Value("${spring.redis.password}")
-    private String redisPassword;
+    // private String redisPassword;
+    private String redisPassword = System.getenv("REDIS_API_KEY");
 
     @Value("${spring.redis.database}")
     private String redisDatabase;
@@ -45,6 +46,7 @@ public class RedisConfig {
         final JedisClientConfiguration jedisClient = JedisClientConfiguration.builder().build();
         final JedisConnectionFactory jedisFac = new JedisConnectionFactory(config, jedisClient);
         jedisFac.afterPropertiesSet();
+
         logger.info("redis host port > {redisHost} {redisPort}", redisHost, redisPort);
         RedisTemplate<String, Mastermind> template = new RedisTemplate<String, Mastermind>();
         template.setConnectionFactory(jedisFac);

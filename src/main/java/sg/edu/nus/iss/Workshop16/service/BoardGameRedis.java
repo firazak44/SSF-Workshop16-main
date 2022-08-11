@@ -53,4 +53,14 @@ public class BoardGameRedis implements BoardGameRepo {
         String pattern = "*%s*".formatted(index);
         return redisTemplate.keys(pattern);
     }
+
+    //Helper class to get all keys from database
+    // public ArrayList<Integer> getKeys() {
+    //     Set<String> redisKeys = redisTemplate.keys("*"); //Pattern is * for ALL keys. Getting all keys.
+    //     ArrayList<Integer> keys = new ArrayList<>();
+    //     for (String item : redisKeys) {
+    //         keys.add(Integer.parseInt(item));
+    //     }
+    //     return keys;
+    // }
 }
